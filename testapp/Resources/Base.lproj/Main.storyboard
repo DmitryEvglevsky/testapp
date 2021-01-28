@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lkG-W0-ysq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites View Controller-->
+        <scene sceneID="IaM-av-siu">
+            <objects>
+                <viewController id="TuV-Y1-y0Y" customClass="FavoritesViewController" customModule="testapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XbB-Jp-uv7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RuG-qr-DVm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cdH-68-Tbo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RuG-qr-DVm" firstAttribute="leading" secondItem="cdH-68-Tbo" secondAttribute="leading" id="1Ad-Ne-Nj1"/>
+                            <constraint firstItem="RuG-qr-DVm" firstAttribute="trailing" secondItem="cdH-68-Tbo" secondAttribute="trailing" id="Dim-9C-JxZ"/>
+                            <constraint firstItem="RuG-qr-DVm" firstAttribute="bottom" secondItem="cdH-68-Tbo" secondAttribute="bottom" id="LoG-Na-Q0s"/>
+                            <constraint firstItem="RuG-qr-DVm" firstAttribute="top" secondItem="cdH-68-Tbo" secondAttribute="top" id="gFa-ck-EsA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="kEs-pz-r7d"/>
+                    <connections>
+                        <outlet property="tableView" destination="RuG-qr-DVm" id="q8S-K5-Pg1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJn-XV-akJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930.43478260869574" y="503.57142857142856"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="9d3-cy-7Ue">
+            <objects>
+                <viewController id="h1d-QT-HJ2" customClass="SearchViewController" customModule="testapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b1G-dR-FM0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mLv-Hi-dH0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="GjR-eP-PLP">
+                                <rect key="frame" x="66" y="44" width="348" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="az7-K3-15J"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBj-6J-CW1">
+                                <rect key="frame" x="0.0" y="44" width="66" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6J2-H2-NGP"/>
+                                    <constraint firstAttribute="width" constant="66" id="gXs-dQ-KSo"/>
+                                </constraints>
+                                <state key="normal">
+                                    <imageReference key="image" image="line.horizontal.3.decrease.circle" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeSearchTypeAction:" destination="h1d-QT-HJ2" eventType="touchUpInside" id="IDz-Wp-x7A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PiF-u2-FZ2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mLv-Hi-dH0" firstAttribute="top" secondItem="GjR-eP-PLP" secondAttribute="bottom" id="DFX-oP-rDq"/>
+                            <constraint firstItem="mLv-Hi-dH0" firstAttribute="bottom" secondItem="PiF-u2-FZ2" secondAttribute="bottom" id="IiP-xN-gvF"/>
+                            <constraint firstItem="zBj-6J-CW1" firstAttribute="leading" secondItem="PiF-u2-FZ2" secondAttribute="leading" id="Syb-uL-sz3"/>
+                            <constraint firstItem="mLv-Hi-dH0" firstAttribute="trailing" secondItem="PiF-u2-FZ2" secondAttribute="trailing" id="T62-AQ-q0v"/>
+                            <constraint firstItem="zBj-6J-CW1" firstAttribute="top" secondItem="PiF-u2-FZ2" secondAttribute="top" id="Zsb-Wn-ZGH"/>
+                            <constraint firstItem="GjR-eP-PLP" firstAttribute="leading" secondItem="zBj-6J-CW1" secondAttribute="trailing" id="cm4-mI-CZh"/>
+                            <constraint firstItem="mLv-Hi-dH0" firstAttribute="leading" secondItem="PiF-u2-FZ2" secondAttribute="leading" id="l8J-Hx-xGj"/>
+                            <constraint firstItem="GjR-eP-PLP" firstAttribute="trailing" secondItem="PiF-u2-FZ2" secondAttribute="trailing" id="nC4-f1-toa"/>
+                            <constraint firstItem="GjR-eP-PLP" firstAttribute="top" secondItem="PiF-u2-FZ2" secondAttribute="top" id="w3b-tz-kuq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="npR-3L-T3y"/>
+                    <connections>
+                        <outlet property="searchBar" destination="GjR-eP-PLP" id="hbK-DQ-yq5"/>
+                        <outlet property="tableView" destination="mLv-Hi-dH0" id="k5o-1H-HNE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mr6-ga-x28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930.43478260869574" y="-157.36607142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qy4-Ja-CCU">
+            <objects>
+                <tabBarController id="lkG-W0-ysq" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oni-aH-hGs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="h1d-QT-HJ2" kind="relationship" relationship="viewControllers" id="kwd-2m-EcV"/>
+                        <segue destination="TuV-Y1-y0Y" kind="relationship" relationship="viewControllers" id="hHE-Dm-IBY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQo-Du-FPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1820" y="147"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
